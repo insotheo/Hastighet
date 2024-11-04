@@ -15,5 +15,7 @@ file(GLOB HEADERS
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
+include_directories(../Hastighet/src)
+
 target_link_libraries(Sandbox Hastighet_st)
 target_link_libraries(Sandbox Hastighet)
