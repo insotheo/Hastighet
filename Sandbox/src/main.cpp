@@ -5,9 +5,7 @@
 
 class MyGameSandbox : public Hastighet::Application{
 public:
-    MyGameSandbox(){
-        HASTIGHET_CLIENT_LOG_TRACE("Hello, World!");
-    }
+    MyGameSandbox(){}
     ~MyGameSandbox(){}
 
 };

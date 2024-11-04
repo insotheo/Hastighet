@@ -4,8 +4,8 @@
 #ifndef HE_HASTIGHET_H
 #define HE_HASTIGHET_H
 
-#include "Core/Log.hpp"
 #include "Core/Application.hpp"
+#include "Core/Log.hpp"
 #include "Core/EntryPoint.hpp"
 
 #endif

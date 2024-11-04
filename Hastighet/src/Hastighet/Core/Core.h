@@ -13,4 +13,6 @@
     #define HASTIGHET_API __declspec(dllexport)
 #endif
 
+#define BIT(X) (1 << X)
+
 #endif
