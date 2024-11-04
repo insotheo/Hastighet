@@ -7,6 +7,7 @@ extern Hastighet::Application* Hastighet::CreateApplication();
 
 int main(int argc, char** argv){
     Hastighet::Application* app = Hastighet::CreateApplication();
+    HASTIGHET_CORE_LOG_INFO("Game started!");
     app->Run();
     delete app;
 }
