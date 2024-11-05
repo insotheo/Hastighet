@@ -21,3 +21,6 @@ add_library("${PROJECT_NAME}_st" STATIC ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PUBLIC src/Hastighet)
 target_include_directories("${PROJECT_NAME}_st" PUBLIC src/Hastighet)
+
+target_precompile_headers(${PROJECT_NAME} PRIVATE src/pch.h)
+target_precompile_headers("${PROJECT_NAME}_st" PRIVATE src/pch.h)

@@ -1,6 +1,5 @@
 #define HASTIGHET_ENGINE_GAME
 
-#include<iostream>
 #include<Hastighet.h>
 
 class MyGameSandbox : public Hastighet::Application{

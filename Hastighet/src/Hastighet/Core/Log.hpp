@@ -1,11 +1,9 @@
 #ifndef HE_LOG_HPP
 #define HE_LOG_HPP
 
-#include <iostream>
 #include <chrono>
 #include <ctime>
 #include <iomanip>
-#include <string.h>
 
 #include "Core.h"
 

@@ -3,8 +3,6 @@
 
 #include "Event.hpp"
 
-#include <sstream>
-
 namespace Hastighet{
     
     class HASTIGHET_API KeyEvent : public Event{
