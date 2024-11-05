@@ -9,7 +9,7 @@ namespace Hastighet{
     Application::~Application(){}
 
     void Application::Run(){
-        Hastighet::WindowResizeEvent e(1280, 720);
+        Hastighet::WindowResizeEvent e(1920, 1080);
         HASTIGHET_CORE_LOG_INFO(e.ToString());
         while (true);
     }
