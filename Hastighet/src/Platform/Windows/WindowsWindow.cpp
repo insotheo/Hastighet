@@ -6,9 +6,17 @@
 #include "Events/KeyEvent.hpp"
 #include "Events/MouseEvent.hpp"
 
+#include "Core/Log.hpp"
+
 namespace Hastighet {
 
 	static bool s_GLFWInit = false;
+
+	static void GLFWErrorCallback(int errCode, const char* msg) {
+		std::stringstream stream;
+		stream << "GLFW Error(" << errCode << "): \"" << msg << "\"";
+		HASTIGHET_CORE_LOG_ERROR(stream.str());
+	}
 
 	ApplicationWindow* ApplicationWindow::Create(const WindowProperties& props) {
 		return new WindowsWindow(props);
@@ -30,6 +38,7 @@ namespace Hastighet {
 		if (!s_GLFWInit) {
 
 			int success = glfwInit();
+			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInit = success == GLFW_TRUE ? true : false;
 		}
 
