@@ -1,6 +1,8 @@
 #ifndef HE_EVENT_HPP
 #define HE_EVENT_HPP
 
+#include "../pch.h"
+
 #include "Core/Core.h"
 
 #include <functional>

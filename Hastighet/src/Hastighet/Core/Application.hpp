@@ -2,6 +2,8 @@
 #define HE_APPLICATION_HPP
 
 #include "Core.h"
+#include "Events/Event.hpp"
+#include "Log.hpp"
 #include "Window.h"
 
 namespace Hastighet{
@@ -12,6 +14,8 @@ namespace Hastighet{
         virtual ~Application();
 
         void Run();
+
+        void OnEvent(Event& ev);
     private:
         std::unique_ptr<ApplicationWindow> m_Window;
         bool m_IsRunning = true;
