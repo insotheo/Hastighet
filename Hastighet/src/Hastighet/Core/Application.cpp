@@ -24,7 +24,14 @@ namespace Hastighet{
     }
 
     void Application::OnEvent(Event& ev) {
-        HASTIGHET_CORE_LOG_INFO(ev.ToString());
+        EventDispatcher dispatcher(ev);
+
+        dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(Application::OnWindowClose)));
+    }
+
+    bool Application::OnWindowClose(WindowCloseEvent& event) {
+        m_IsRunning = false;
+        return true;
     }
 
 }
