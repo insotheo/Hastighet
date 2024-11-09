@@ -2,6 +2,7 @@
 #define HE_APPLICATION_HPP
 
 #include "Core.h"
+#include "Window.h"
 
 namespace Hastighet{
 
@@ -11,7 +12,9 @@ namespace Hastighet{
         virtual ~Application();
 
         void Run();
-
+    private:
+        std::unique_ptr<ApplicationWindow> m_Window;
+        bool m_IsRunning = true;
     };
 
     Application* CreateApplication();

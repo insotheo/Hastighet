@@ -1,17 +1,23 @@
 #include "Application.hpp"
 
-#include "Events/ApplicationEvents.hpp"
-#include "Core/Log.hpp"
+#include<GLFW/glfw3.h>
 
 namespace Hastighet{
 
-    Application::Application(){}
+    Application::Application() {
+#ifdef _WIN32
+        m_Window = std::unique_ptr<ApplicationWindow>(ApplicationWindow::Create(WindowProperties()));
+#endif
+    }
+
     Application::~Application(){}
 
     void Application::Run(){
-        Hastighet::WindowResizeEvent e(1920, 1080);
-        HASTIGHET_CORE_LOG_INFO(e.ToString());
-        while (true);
+        while (m_IsRunning) {
+            glClearColor(0, 1, 0, 1);
+            glClear(GL_COLOR_BUFFER_BIT);
+            m_Window->OnUpdate();
+        }
     }
 
 }

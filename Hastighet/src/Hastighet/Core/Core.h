@@ -7,6 +7,8 @@
     #error Hastighet engine works only with Windows!
 #endif
 
+#pragma comment("opengl32.lib")
+
 #ifdef HASTIGHET_ENGINE_GAME
     #define HASTIGHET_API __declspec(dllimport)
 #else
