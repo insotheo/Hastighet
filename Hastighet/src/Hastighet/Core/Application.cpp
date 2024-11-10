@@ -17,6 +17,11 @@ namespace Hastighet{
         while (m_IsRunning) {
             glClearColor(0, 1, 0, 1);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            for (Layer* layer : m_LayerStack) {
+                layer->OnUpdate();
+            }
+
             m_Window->OnUpdate();
         }
     }
@@ -25,11 +30,26 @@ namespace Hastighet{
         EventDispatcher dispatcher(ev);
 
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(Application::OnWindowClose)));
+
+        for (auto iter = m_LayerStack.end(); iter != m_LayerStack.begin();) {
+            (*--iter)->OnEvent(ev);
+            if (ev.IsHandled()) {
+                break;
+            }
+        }
     }
 
     bool Application::OnWindowClose(WindowCloseEvent& event) {
         m_IsRunning = false;
         return true;
+    }
+
+    void Application::PushLayer(Layer* layer) {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer* overlay) {
+        m_LayerStack.PushOverlay(overlay);
     }
 
 }

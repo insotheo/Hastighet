@@ -4,7 +4,7 @@
 #define HE_CORE_H
 
 #ifndef _WIN32
-    #error Hastighet engine works only with Windows!
+    #error Hastighet engine supports only Windows!
 #endif
 
 #pragma comment(lib, "opengl32")

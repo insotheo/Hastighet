@@ -15,7 +15,7 @@ ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/lib
 
 set(ENGINE_LIBS
 opengl32
-${ENGINE_LIB_DIRS}/glfw3.lib
+"${ENGINE_LIB_DIRS}/glfw3.lib"
 )
 
 file(GLOB SOURCES 

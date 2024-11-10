@@ -4,7 +4,7 @@
 #include "Core.h"
 #include "Events/Event.hpp"
 #include "Events/ApplicationEvents.hpp"
-#include "Log.hpp"
+#include "LayerStack.h"
 #include "Window.h"
 
 namespace Hastighet{
@@ -17,10 +17,14 @@ namespace Hastighet{
         void Run();
 
         void OnEvent(Event& ev);
+
+        void PushLayer(Layer* layer);
+        void PushOverlay(Layer* overlay);
     private:
         bool OnWindowClose(WindowCloseEvent& event);
         std::unique_ptr<ApplicationWindow> m_Window;
         bool m_IsRunning = true;
+        LayerStack m_LayerStack;
     };
 
     Application* CreateApplication();
