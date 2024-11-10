@@ -7,10 +7,8 @@ namespace Hastighet{
 #define BIND_EVENT_FUNC(fn) std::bind(&fn, this, std::placeholders::_1
 
     Application::Application() {
-#ifdef _WIN32
         m_Window = std::unique_ptr<ApplicationWindow>(ApplicationWindow::Create(WindowProperties()));
         m_Window->SetEventCallback(BIND_EVENT_FUNC(Application::OnEvent)));
-#endif
     }
 
     Application::~Application(){}

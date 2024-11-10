@@ -12,14 +12,18 @@ namespace Hastighet {
 
 	static bool s_GLFWInit = false;
 
+	ApplicationWindow* ApplicationWindow::Create(const WindowProperties& props) {
+#ifdef _WIN32
+		return new WindowsWindow(props);
+#else
+#error Hastighet doesn't support creating window on your platform
+#endif
+	}
+
 	static void GLFWErrorCallback(int errCode, const char* msg) {
 		std::stringstream stream;
 		stream << "GLFW Error(" << errCode << "): \"" << msg << "\"";
 		HASTIGHET_CORE_LOG_ERROR(stream.str());
-	}
-
-	ApplicationWindow* ApplicationWindow::Create(const WindowProperties& props) {
-		return new WindowsWindow(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProperties& props) {
