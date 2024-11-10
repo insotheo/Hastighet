@@ -7,6 +7,7 @@ project(Hastighet)
 
 set(ENGINE_INCLUDE_DIRS 
 ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/include
+${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/Glad/include
 )
 
 set(ENGINE_LIB_DIRS
@@ -16,6 +17,7 @@ ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/lib
 set(ENGINE_LIBS
 opengl32
 "${ENGINE_LIB_DIRS}/glfw3.lib"
+Glad
 )
 
 file(GLOB SOURCES 
@@ -45,3 +47,6 @@ target_precompile_headers("${PROJECT_NAME}_st" PRIVATE src/pch.h)
 
 target_link_libraries("${PROJECT_NAME}" PRIVATE "${ENGINE_LIBS}")
 target_link_libraries("${PROJECT_NAME}_st" PRIVATE "${ENGINE_LIBS}")
+
+target_compile_definitions("${PROJECT_NAME}" PRIVATE GLFW_INCLUDE_NONE)
+target_compile_definitions("${PROJECT_NAME}_st" PRIVATE GLFW_INCLUDE_NONE)

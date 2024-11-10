@@ -12,6 +12,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/Lib")
 if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
     message(FATAL_ERROR "Only x64")
 else()
+    add_subdirectory(Hastighet/vendor/GLAD)
     add_subdirectory(Hastighet)
     add_subdirectory(Sandbox)
 

@@ -8,6 +8,8 @@
 
 #include "Core/Log.hpp"
 
+#include <glad/glad.h>
+
 namespace Hastighet {
 
 	static bool s_GLFWInit = false;
@@ -50,6 +52,13 @@ namespace Hastighet {
 
 			m_Window = glfwCreateWindow((int)props.WindowWidth, (int)props.WindowHeight, m_Data.WindowTitle.c_str(), nullptr, nullptr);
 			glfwMakeContextCurrent(m_Window);
+
+			int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+			if (status == GLFW_FALSE) {
+				HASTIGHET_CORE_LOG_ERROR("Failed to init Glad!");
+				std::cerr << "Failed to init Glad!";
+			}
+
 			glfwSetWindowUserPointer(m_Window, &m_Data);
 
 			//Callbacks
