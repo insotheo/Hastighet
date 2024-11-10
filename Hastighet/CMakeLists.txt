@@ -8,6 +8,7 @@ project(Hastighet)
 set(ENGINE_INCLUDE_DIRS 
 ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/GLFW/include
 ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/Glad/include
+${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/ImGui
 )
 
 set(ENGINE_LIBS
@@ -20,6 +21,11 @@ file(GLOB SOURCES
     src/*.cpp
     src/Hastighet/*/*.cpp
     src/Platform/*/*.cpp
+
+    ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/ImGui/ImGui/*.cpp
+    ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/ImGui/ImGui/*/*.cpp
+    ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/ImGui/ImGui/*.h
+    ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/ImGui/ImGui/*/*.h
 )
 
 file(GLOB HEADERS
@@ -31,8 +37,8 @@ file(GLOB HEADERS
 
 include_directories("${ENGINE_INCLUDE_DIRS}")
 
-add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
-add_library("${PROJECT_NAME}_st" STATIC ${SOURCES} ${HEADERS})
+add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS} ${IMGUI_SOURCES})
+add_library("${PROJECT_NAME}_st" STATIC ${SOURCES} ${HEADERS} ${IMGUI_SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE src/)
 target_include_directories("${PROJECT_NAME}_st" PRIVATE src/)

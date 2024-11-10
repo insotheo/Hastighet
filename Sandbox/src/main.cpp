@@ -21,6 +21,7 @@ class MyGameSandbox : public Hastighet::Application{
 public:
     MyGameSandbox() {
         PushLayer(new TestLayer());
+        PushOverlay(new Hastighet::ImGuiLayer());
     }
 
     ~MyGameSandbox(){}

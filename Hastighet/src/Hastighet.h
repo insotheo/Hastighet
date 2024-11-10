@@ -7,6 +7,7 @@
 #include "Hastighet/Core/Application.hpp"
 #include "Hastighet/Core/Layer.h"
 #include "Hastighet/Core/Log.hpp"
+#include "Hastighet/ImGui/ImGuiLayer.h"
 
 #include "Hastighet/Core/EntryPoint.hpp"
 
