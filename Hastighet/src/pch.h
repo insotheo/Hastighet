@@ -4,5 +4,6 @@
 #include<iostream>
 #include<string>
 #include<sstream>
+#include<functional>
 
 #endif

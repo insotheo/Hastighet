@@ -1,12 +1,13 @@
-#include "../pch.h"
+#include "pch.h"
+
 #include "WindowsWindow.hpp"
 
-#include "Events/Event.hpp"
-#include "Events/ApplicationEvents.hpp"
-#include "Events/KeyEvent.hpp"
-#include "Events/MouseEvent.hpp"
+#include "Hastighet/Core/Log.hpp"
 
-#include "Core/Log.hpp"
+#include "Hastighet/Events/Event.hpp"
+#include "Hastighet/Events/ApplicationEvents.hpp"
+#include "Hastighet/Events/KeyEvent.hpp"
+#include "Hastighet/Events/MouseEvent.hpp"
 
 #include <glad/glad.h>
 
@@ -14,19 +15,17 @@ namespace Hastighet {
 
 	static bool s_GLFWInit = false;
 
-	ApplicationWindow* ApplicationWindow::Create(const WindowProperties& props) {
-#ifdef _WIN32
-		return new WindowsWindow(props);
-#else
-#error Hastighet doesn't support creating window on your platform
-#endif
-	}
-
 	static void GLFWErrorCallback(int errCode, const char* msg) {
 		std::stringstream stream;
 		stream << "GLFW Error(" << errCode << "): \"" << msg << "\"";
 		HASTIGHET_CORE_LOG_ERROR(stream.str());
 	}
+
+#ifdef _WIN32
+	ApplicationWindow* ApplicationWindow::Create(const WindowProperties& props) {
+		return new WindowsWindow(props);
+	}
+#endif // Windows
 
 	WindowsWindow::WindowsWindow(const WindowProperties& props) {
 		Init(props);

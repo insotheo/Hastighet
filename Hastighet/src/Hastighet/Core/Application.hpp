@@ -2,10 +2,11 @@
 #define HE_APPLICATION_HPP
 
 #include "Core.h"
-#include "Events/Event.hpp"
-#include "Events/ApplicationEvents.hpp"
-#include "LayerStack.h"
 #include "Window.h"
+#include "LayerStack.h"
+
+#include "Hastighet/Events/Event.hpp"
+#include "Hastighet/Events/ApplicationEvents.hpp"
 
 namespace Hastighet{
 

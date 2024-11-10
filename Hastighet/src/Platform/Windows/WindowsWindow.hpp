@@ -1,7 +1,7 @@
 #ifndef HE_WINDOWS_WINDOW_HPP
 #define HE_WINDOWS_WINDOW_HPP
 
-#include "Core/Window.h"
+#include "Hastighet/Core/Window.h"
 
 #include <GLFW/glfw3.h>
 

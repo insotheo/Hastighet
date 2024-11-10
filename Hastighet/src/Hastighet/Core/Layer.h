@@ -2,7 +2,8 @@
 #define HE_LAYER_H
 
 #include "Core.h"
-#include "Events/Event.hpp"
+
+#include "Hastighet/Events/Event.hpp"
 
 namespace Hastighet {
 

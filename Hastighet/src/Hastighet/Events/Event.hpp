@@ -1,11 +1,9 @@
 #ifndef HE_EVENT_HPP
 #define HE_EVENT_HPP
 
-#include "../pch.h"
+#include "pch.h"
 
-#include "Core/Core.h"
-
-#include <functional>
+#include "Hastighet/Core/Core.h"
 
 namespace Hastighet{
 

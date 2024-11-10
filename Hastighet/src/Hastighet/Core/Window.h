@@ -1,12 +1,11 @@
 #ifndef HE_WINDOW_H
 #define HE_WINDOW_H
 
-#include "../pch.h"
-
-#include<functional>
+#include "pch.h"
 
 #include "Core.h"
-#include "Events/Event.hpp"
+
+#include "Hastighet/Events/Event.hpp"
 
 namespace Hastighet {
 

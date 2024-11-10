@@ -1,11 +1,11 @@
 #ifndef HE_LOG_HPP
 #define HE_LOG_HPP
 
+#include "Core.h"
+
 #include <chrono>
 #include <ctime>
 #include <iomanip>
-
-#include "Core.h"
 
 namespace Hastighet{
 

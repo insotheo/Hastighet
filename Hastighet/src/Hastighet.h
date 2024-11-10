@@ -4,9 +4,10 @@
 #ifndef HE_HASTIGHET_H
 #define HE_HASTIGHET_H
 
-#include "Core/Application.hpp"
-#include "Core/Layer.h"
-#include "Core/Log.hpp"
-#include "Core/EntryPoint.hpp"
+#include "Hastighet/Core/Application.hpp"
+#include "Hastighet/Core/Layer.h"
+#include "Hastighet/Core/Log.hpp"
+
+#include "Hastighet/Core/EntryPoint.hpp"
 
 #endif

@@ -6,17 +6,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 project(Hastighet)
 
 set(ENGINE_INCLUDE_DIRS 
-${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/include
+${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/GLFW/include
 ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/Glad/include
-)
-
-set(ENGINE_LIB_DIRS
-${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/vendor/lib
 )
 
 set(ENGINE_LIBS
 opengl32
-"${ENGINE_LIB_DIRS}/glfw3.lib"
+glfw
 Glad
 )
 
@@ -34,13 +30,12 @@ file(GLOB HEADERS
 )
 
 include_directories("${ENGINE_INCLUDE_DIRS}")
-link_directories("${ENGINE_LIB_DIRS}")
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
 add_library("${PROJECT_NAME}_st" STATIC ${SOURCES} ${HEADERS})
 
-target_include_directories(${PROJECT_NAME} PUBLIC src/Hastighet)
-target_include_directories("${PROJECT_NAME}_st" PUBLIC src/Hastighet)
+target_include_directories(${PROJECT_NAME} PRIVATE src/)
+target_include_directories("${PROJECT_NAME}_st" PRIVATE src/)
 
 target_precompile_headers(${PROJECT_NAME} PRIVATE src/pch.h)
 target_precompile_headers("${PROJECT_NAME}_st" PRIVATE src/pch.h)
