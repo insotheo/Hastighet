@@ -105,6 +105,12 @@ namespace Hastighet {
 				}
 			});
 
+			glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode) {
+				WindowsData& data = *(WindowsData*)(glfwGetWindowUserPointer(window));
+				KeyTypedEvent ev(keycode);
+				data.WindowCallback(ev);
+			});
+
 			glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) { //buttons
 				WindowsData& data = *(WindowsData*)(glfwGetWindowUserPointer(window));
 				int buttoncode = button;

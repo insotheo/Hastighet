@@ -60,4 +60,12 @@ IMGUI_IMPL_API void     ImGui_ImplGlfw_MonitorCallback(GLFWmonitor* monitor, int
 // GLFW helpers
 IMGUI_IMPL_API void     ImGui_ImplGlfw_Sleep(int milliseconds);
 
+//
+ImGuiKey ImGui_ImplGlfw_KeyToImGuiKey(int keycode, int scancode);
+//
+
+//Custom definition
+#define HASTIGHET_ENGINE_MACRO_IMGUI_KEY_TO_GLFW_KEY(key) ImGui_ImplGlfw_KeyToImGuiKey((int)key, -1)
+//
+
 #endif // #ifndef IMGUI_DISABLE

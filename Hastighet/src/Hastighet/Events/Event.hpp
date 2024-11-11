@@ -11,7 +11,7 @@ namespace Hastighet{
         None = 0,
         WindowResize, WindowMoved, WindowClose, WindowGotFocus, WindowLostFocus, //Window events
         AppTick, AppUpdate, AppRender, //App events
-        KeyPressed, KeyReleased, //Keyboard events
+        KeyPressed, KeyReleased, KeyTyped, //Keyboard events
         MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled //Mouse events
     };
 

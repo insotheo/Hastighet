@@ -47,6 +47,20 @@ namespace Hastighet{
         EVENT_CLASS_TYPE(KeyReleased)
     };
 
+    class HASTIGHET_API KeyTypedEvent : public KeyEvent {
+    public:
+        KeyTypedEvent(int keycode) : KeyEvent(keycode){}
+
+
+        std::string ToString() const override {
+            std::stringstream stream;
+            stream << "'" << (char)m_KeyCode << "' was typed!";
+            return stream.str();
+        }
+
+        EVENT_CLASS_TYPE(KeyTyped)
+    };
+
 }
 
 #endif

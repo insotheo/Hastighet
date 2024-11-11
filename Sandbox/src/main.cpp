@@ -11,7 +11,6 @@ public:
     }
     
     void OnEvent(Hastighet::Event& ev) override {
-        Hastighet::Log::trace(ev.ToString(), "EventHandler");
     }
 
 };

@@ -8,8 +8,6 @@ namespace Hastighet{
 
     Application* Application::s_Instance = nullptr;
 
-#define BIND_EVENT_FUNC(fn) std::bind(&fn, this, std::placeholders::_1
-
     Application::Application() {
         if (!s_Instance) {
             HASTIGHET_CORE_LOG_ERROR("Application is already exists!");
