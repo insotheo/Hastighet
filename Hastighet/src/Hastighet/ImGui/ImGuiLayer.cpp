@@ -105,7 +105,10 @@ namespace Hastighet {
 		ImGuiIO& imgio = ImGui::GetIO();
 		imgio.AddKeyEvent(HASTIGHET_ENGINE_MACRO_IMGUI_KEY_TO_GLFW_KEY(event.GetKeyCode()), true);
 
-		//TODO: Ctrl, Shift, etc
+		imgio.KeyCtrl = event.GetKeyCode() == GLFW_KEY_LEFT_CONTROL || event.GetKeyCode() == GLFW_KEY_RIGHT_CONTROL;
+		imgio.KeyShift = event.GetKeyCode() == GLFW_KEY_LEFT_SHIFT || event.GetKeyCode() == GLFW_KEY_RIGHT_SHIFT;
+		imgio.KeyAlt = event.GetKeyCode() == GLFW_KEY_LEFT_ALT || event.GetKeyCode() == GLFW_KEY_RIGHT_ALT;
+		imgio.KeySuper = event.GetKeyCode() == GLFW_KEY_LEFT_SUPER || event.GetKeyCode() == GLFW_KEY_RIGHT_SUPER;
 
 		return false;
 	}
