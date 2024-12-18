@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<OutDir>..\Bin\Hastighet</OutDir>
+	<AppendTargetFrameworkToOutDir>False</AppendTargetFrameworkToOutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\" />
+  </ItemGroup>
+
+</Project>
