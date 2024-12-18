@@ -6,8 +6,4 @@
 	<AppendTargetFrameworkToOutDir>False</AppendTargetFrameworkToOutDir>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
-
 </Project>

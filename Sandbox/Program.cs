@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Hastighet.Core;
 
 namespace Sandbox
 {
@@ -7,7 +7,11 @@ namespace Sandbox
     {
         static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            Log.Trace("Hello, World!");
+            Log.Info("Hello, World!");
+            Log.Warn("Hello, World!");
+            Log.Error("Hello, World!");
+            return;
         }
     }
 
